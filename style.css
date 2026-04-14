@@ -174,3 +174,7 @@ thead tr {
 tbody tr {
     background: white;
 }
+
+tbody tr:hover td {
+    color: white;
+}
