@@ -167,14 +167,11 @@ tbody tr:last-child td {
 .content p {
     padding: 20px;
 }
-thead tr {
-    background: #003366;
-}
-
 tbody tr {
-    background: white;
+    background: #4a78c2;
+    color: white;
 }
 
-tbody tr:hover td {
+tbody tr td {
     color: white;
 }
