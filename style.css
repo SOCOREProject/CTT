@@ -123,8 +123,8 @@ tbody tr:nth-child(even) {
 
 /* HOVER */
 tbody tr:hover {
-    background: #eef5ff;
-    transition: 0.2s;
+    background: #4a78c2; /* 🔥 kolor jak zaznaczenie */
+    color: white;
 }
 
 /* USUŃ OSTATNI BORDER */
