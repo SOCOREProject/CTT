@@ -40,43 +40,40 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Zapytanie 1</td>
-            <td>Poszukiwane rozwiązanie technologiczne...</td>
-        </tr>
     </tbody>
 </table>
 
-<h3>Dodaj nowe zapytanie</h3>
-
-<input type="text" id="title" placeholder="Tytuł">
-<input type="text" id="description" placeholder="Opis">
-<button onclick="addRow()">Dodaj</button>
-
 <script>
-function addRow() {
-    let title = document.getElementById("title").value;
-    let description = document.getElementById("description").value;
-
-    if (title === "" || description === "") {
-        alert("Uzupełnij wszystkie pola!");
-        return;
+const data = [
+    {
+        title: "Zapytanie 1",
+        description: "Poszukiwane rozwiązanie technologiczne..."
+    },
+    {
+        title: "Zapytanie 2",
+        description: "Analiza materiałów kompozytowych..."
     }
+];
 
-    let table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
-    let newRow = table.insertRow();
+// GENEROWANIE TABELI
+const tableBody = document.querySelector("#dataTable tbody");
 
-    let cell1 = newRow.insertCell(0);
-    let cell2 = newRow.insertCell(1);
+data.forEach(item => {
+    const row = document.createElement("tr");
 
-    cell1.innerHTML = title;
-    cell2.innerHTML = description;
+    const cell1 = document.createElement("td");
+    const cell2 = document.createElement("td");
 
-    // wyczyść pola
-    document.getElementById("title").value = "";
-    document.getElementById("description").value = "";
-}
+    cell1.textContent = item.title;
+    cell2.textContent = item.description;
+
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+
+    tableBody.appendChild(row);
+});
 </script>
+🔥 Jak dodajesz nowe wiersze
 
         <div class="box">
             <strong>Zapytanie 1</strong>
