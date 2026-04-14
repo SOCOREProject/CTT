@@ -80,36 +80,76 @@ footer {
         flex-direction: column;
     }
 }
+/* TABELA */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
+/* NAGŁÓWEK */
 th {
     background: #003366;
     color: white;
+    text-align: left;
+    padding: 14px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
 }
 
-input {
-    padding: 10px;
-    margin: 5px 5px 10px 0;
-    width: 200px;
+/* KOMÓRKI */
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
 }
 
-button {
-    padding: 10px 15px;
-    background: #003366;
-    color: white;
-    border: none;
-    cursor: pointer;
+/* ZEBRA (co drugi wiersz) */
+tbody tr:nth-child(even) {
+    background: #f9fbfd;
 }
 
-button:hover {
-    background: #0055aa;
+/* HOVER */
+tbody tr:hover {
+    background: #eef5ff;
+    transition: 0.2s;
+}
+
+/* USUŃ OSTATNI BORDER */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    td {
+        border: none;
+        padding: 8px 0;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        color: #003366;
+    }
 }
