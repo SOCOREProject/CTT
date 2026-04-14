@@ -93,6 +93,7 @@ footer {
 /* TABELA */
 table {
     width: 100%;
+    margin: 0; /* ❗ ważne */
     border-collapse: collapse;
     margin-top: 20px;
     background: white;
@@ -162,4 +163,9 @@ tbody tr:last-child td {
         display: block;
         color: #003366;
     }
+}
+.content h2,
+.content h3,
+.content p {
+    padding: 20px;
 }
