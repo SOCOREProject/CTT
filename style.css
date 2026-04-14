@@ -117,19 +117,18 @@ td {
 }
 
 /* ZEBRA (co drugi wiersz) */
-tbody tr:nth-child(even) {
-    background: #f9fbfd;
-}
 
 /* HOVER */
 tbody tr:hover {
-    background: #4a78c2; /* 🔥 kolor jak zaznaczenie */
-    color: white;
+    background: #4a78c2;
 }
 
-/* USUŃ OSTATNI BORDER */
-tbody tr:last-child td {
-    border-bottom: none;
+tbody tr:hover td {
+    color: white;
+}
+tbody tr {
+    background: transparent;
+    transition: 0.2s;
 }
 
 /* RESPONSYWNOŚĆ */
@@ -166,12 +165,4 @@ tbody tr:last-child td {
 .content h3,
 .content p {
     padding: 20px;
-}
-tbody tr {
-    background: #4a78c2;
-    color: white;
-}
-
-tbody tr td {
-    color: white;
 }
