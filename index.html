@@ -45,17 +45,10 @@
 
 <script>
 const data = [
-    {
-        title: "Zapytanie 1",
-        description: "Poszukiwane rozwiązanie technologiczne..."
-    },
-    {
-        title: "Zapytanie 2",
-        description: "Analiza materiałów kompozytowych..."
-    }
+    { title: "Zapytanie 1", description: "Poszukiwane rozwiązanie technologiczne..." },
+    { title: "Zapytanie 2", description: "Analiza materiałów kompozytowych..." }
 ];
 
-// GENEROWANIE TABELI
 const tableBody = document.querySelector("#dataTable tbody");
 
 data.forEach(item => {
@@ -67,38 +60,16 @@ data.forEach(item => {
     cell1.textContent = item.title;
     cell2.textContent = item.description;
 
+    // do wersji mobilnej
+    cell1.setAttribute("data-label", "Tytuł");
+    cell2.setAttribute("data-label", "Opis");
+
     row.appendChild(cell1);
     row.appendChild(cell2);
 
     tableBody.appendChild(row);
 });
 </script>
-🔥 Jak dodajesz nowe wiersze
-
-        <div class="box">
-            <strong>Zapytanie 1</strong>
-            <p>xyz</p>
-        </div>
-
-        <div class="box">
-            <strong>Zapytanie 2</strong>
-            <p>zyx</p>
-        </div>
-    </div>
-
-    <aside class="sidebar">
-        <h3>Menu</h3>
-        <ul>
-            <li>Oferty</li>
-            <li>Projekty</li>
-            <li>Kontakt</li>
-        </ul>
-
-        <h3>Kontakt</h3>
-        <p>transfer@us.edu.pl</p>
-    </aside>
-</div>
-
 <footer>
 Wszelkie prawa zastrzeżone</footer>
 
