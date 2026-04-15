@@ -182,3 +182,6 @@ tbody tr:hover {
 tbody tr:hover td {
     color: white;
 }
+.logo-img {
+    height: 40px;
+}
