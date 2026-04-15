@@ -188,7 +188,7 @@ tbody tr:hover td {
 }
 .table-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 🔥 rozsuwa na lewo i prawo */
     align-items: center;
     padding: 20px;
 }
@@ -211,4 +211,13 @@ tbody tr:hover td {
 
 #searchInput:focus {
     border-color: #003366;
+}
+#searchInput {
+    align-self: flex-start; /* 🔍 po lewej */
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.table-header h3 {
+    align-self: flex-end; /* 📄 po prawej */
 }
