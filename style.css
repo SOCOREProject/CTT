@@ -223,7 +223,7 @@ tbody tr:hover td {
 }
 #searchInput {
     align-self: flex-end; /* 🔍 po prawej */
-    margin-bottom: 5px;  /* 🔥 odstęp od tytułu */
+    margin-bottom: 0;  /* 🔥 odstęp od tytułu */
 }
 
 .table-header h3 {
