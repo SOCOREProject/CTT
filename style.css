@@ -186,3 +186,29 @@ tbody tr:hover td {
     height: 60px;
     width: auto; /* zachowuje proporcje */
 }
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* WYSZUKIWARKA */
+#searchInput {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+#searchInput {
+    width: 250px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* 🔥 zaokrąglone */
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #003366;
+}
