@@ -183,6 +183,6 @@ tbody tr:hover td {
     color: white;
 }
 .logo-img {
-    height: 25px;
+    height: 60px;
     width: auto; /* zachowuje proporcje */
 }
