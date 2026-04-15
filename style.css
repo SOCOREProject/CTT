@@ -43,6 +43,8 @@ nav a {
     background: white;
     padding: 40px 30px;
     border-bottom: 2px solid #ddd;
+    text-align: center;
+
 }
 
 .hero h1 {
@@ -50,6 +52,8 @@ nav a {
     color: #003366;
     font-size: 48px; /* 🔥 większy napis */
     text-align: center; /* 🔥 wyśrodkowanie */
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .container {
