@@ -62,23 +62,63 @@ const data = [
     { title: "Zapytanie 11", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " },
 ];
 
+<script>
+const data = [
+    {
+        date: "2026-04-10",
+        title: "Zapytanie 1",
+        description: "Poszukiwane rozwiązanie technologiczne...",
+        field: "Inżynieria materiałowa",
+        deadline: "2026-05-01",
+        status: "Otwarte"
+    },
+    {
+        date: "2026-04-12",
+        title: "Zapytanie 2",
+        description: "Analiza materiałów kompozytowych...",
+        field: "Chemia",
+        deadline: "2026-05-10",
+        status: "W trakcie"
+    },
+    {
+        date: "2026-04-13",
+        title: "Zapytanie 3",
+        description: "Lorem ipsum dolor sit amet...",
+        field: "Fizyka",
+        deadline: "2026-05-15",
+        status: "Otwarte"
+    }
+];
+
 const tableBody = document.querySelector("#dataTable tbody");
 
 data.forEach(item => {
     const row = document.createElement("tr");
 
-    const cell1 = document.createElement("td");
-    const cell2 = document.createElement("td");
+    const cells = [
+        item.date,
+        item.title,
+        item.description,
+        item.field,
+        item.deadline,
+        item.status
+    ];
 
-    cell1.textContent = item.title;
-    cell2.textContent = item.description;
+    const labels = [
+        "Data zapytania",
+        "Tytuł",
+        "Opis",
+        "Dyscyplina",
+        "Termin",
+        "Status"
+    ];
 
-    // do wersji mobilnej
-    cell1.setAttribute("data-label", "Tytuł");
-    cell2.setAttribute("data-label", "Opis");
-
-    row.appendChild(cell1);
-    row.appendChild(cell2);
+    cells.forEach((text, index) => {
+        const td = document.createElement("td");
+        td.textContent = text;
+        td.setAttribute("data-label", labels[index]);
+        row.appendChild(td);
+    });
 
     tableBody.appendChild(row);
 });
