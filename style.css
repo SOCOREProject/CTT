@@ -48,6 +48,8 @@ nav a {
 .hero h1 {
     margin: 0;
     color: #003366;
+    font-size: 48px; /* 🔥 większy napis */
+    text-align: center; /* 🔥 wyśrodkowanie */
 }
 
 .container {
