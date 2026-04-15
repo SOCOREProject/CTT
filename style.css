@@ -101,7 +101,7 @@ table {
     width: 100%;
     margin: 0; /* ❗ ważne */
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 5px;
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
@@ -188,9 +188,9 @@ tbody tr:hover td {
 }
 .table-header {
     display: flex;
-    flex-direction: column; /* 🔥 pionowo */
+    flex-direction: column;
     align-items: stretch;
-    padding: 20px;
+    padding: 0 20px; /* 🔥 usuwa górny i dolny odstęp */
 }
 
 /* WYSZUKIWARKA */
@@ -223,9 +223,10 @@ tbody tr:hover td {
 }
 #searchInput {
     align-self: flex-end; /* 🔍 po prawej */
-    margin-bottom: 15px;  /* 🔥 odstęp od tytułu */
+    margin-bottom: 5px;  /* 🔥 odstęp od tytułu */
 }
 
 .table-header h3 {
-    align-self: flex-start; /* 📄 po lewej */
+    align-self: flex-start; 
+    margin: 0;/* 📄 po lewej */
 }
