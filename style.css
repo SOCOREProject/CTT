@@ -167,7 +167,7 @@ tbody tr {
     padding: 20px;
 }
 tbody tr:nth-child(even) {
-    background: #c6c6c6;
+    background: #ECECEC;
 }
 tbody tr:hover {
     background: #4a78c2;
