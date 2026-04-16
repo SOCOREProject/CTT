@@ -122,35 +122,7 @@ const data = [
     }
 ];
 
-const tableBody = document.querySelector("#dataTable tbody");
 
-data.forEach(item => {
-    const row = document.createElement("tr");
-
-    [
-        item.date,
-        item.title,
-        item.description,
-        item.field,
-        item.deadline,
-        item.status
-    ].forEach((text, index) => {
-
-        const td = document.createElement("td");
-
-if (index === 2) { // kolumna "Opis"
-    td.innerHTML = `
-        <div class="desc">
-            ${text}
-            <button class="more-btn" onclick="openModal()">więcej...</button>
-        </div>
-    `;
-} else {
-    td.textContent = text;
-}
-
-    tableBody.appendChild(row);
-});
 
 function filterTable() {
     const filter = document.getElementById("searchInput").value.toLowerCase();
