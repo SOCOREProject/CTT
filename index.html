@@ -149,6 +149,25 @@ data.forEach(item => {
             td.textContent = text;
         }
 
+        row.appendChild(td); // 🔥 TO BYŁO BRAKUJĄCE
+    });
+
+    tableBody.appendChild(row); // 🔥 MUSI BYĆ TU
+});
+
+        const td = document.createElement("td");
+
+        if (index === 2) { // kolumna "Opis"
+            td.innerHTML = `
+                <div class="desc">
+                    ${text}
+                    <button class="more-btn" onclick="openModal()">więcej...</button>
+                </div>
+            `;
+        } else {
+            td.textContent = text;
+        }
+
         row.appendChild(td); // 🔥 brakowało tego
     });
 
