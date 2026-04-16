@@ -144,8 +144,8 @@ data.forEach(item => {
             td.innerHTML = `
                 <div class="desc">
                     ${text}
-                    <button class="more-btn" onclick="openModal()">więcej...</button>
-                </div>
+                    <button class="more-btn" onclick="openModal('${item.file}')">więcej...</button>                
+                    </div>
             `;
         } else {
             td.textContent = text;
@@ -159,14 +159,15 @@ data.forEach(item => {
 
 /* ===== MODAL ===== */
 
-function openModal() {
+function openModal(file) {
+    selectedFile = file; // zapamiętujemy plik
     document.getElementById("modal").style.display = "block";
 }
 
 function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
-    function downloadFile() {
+  function downloadFile() {
     const email = document.getElementById("email").value;
 
     if (!email) {
@@ -174,13 +175,13 @@ function closeModal() {
         return;
     }
 
-    // 🔥 pobieranie pliku
     const link = document.createElement("a");
-    link.href = "plik1.pdf";
-    link.download = "plik1.pdf";
+    link.href = selectedFile; // 🔥 TU JEST KLUCZ
+    link.download = selectedFile;
     link.click();
 
     closeModal();
+}
 }
 </script>
     <div id="modal" class="modal">
