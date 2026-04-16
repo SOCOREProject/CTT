@@ -121,55 +121,21 @@ const data = [
         status: "Otwarte"
     }
 ];
+const tableBody = document.querySelector("#dataTable tbody");
 
-
-
-function filterTable() {
-    const filter = document.getElementById("searchInput").value.toLowerCase();
-    const rows = document.querySelectorAll("#dataTable tbody tr");
-
-    rows.forEach(row => {
-        row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
-    });
-}
-    function openModal() {
-    document.getElementById("modal").style.display = "block";
-}
-
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
-
-function sendFile() {
-    const email = document.getElementById("email").value;
-
-    if (!email) {
-        alert("Podaj email!");
-        return;
-    }
-
-    alert("Plik został wysłany (symulacja)");
-
-    // 🔥 pobieranie pliku (fake)
-    const link = document.createElement("a");
-    link.href = "plik.pdf"; // dodaj swój plik
-    link.download = "plik.pdf";
-    link.click();
-
-    closeModal();
-}
-    data.forEach(item => {
+data.forEach(item => {
     const row = document.createElement("tr");
 
-    [
+    const values = [
         item.date,
         item.title,
         item.description,
         item.field,
         item.deadline,
         item.status
-    ].forEach((text, index) => {
+    ];
 
+    values.forEach((text, index) => {
         const td = document.createElement("td");
 
         if (index === 2) {
@@ -188,14 +154,16 @@ function sendFile() {
 
     tableBody.appendChild(row);
 });
+
+/* ===== MODAL ===== */
+
+function openModal() {
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
 </script>
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <h3>Podaj email</h3>
-        <input type="email" id="email" placeholder="Twój email">
-        <button onclick="sendFile()">Pobierz plik</button>
-        <button onclick="closeModal()">Zamknij</button>
-    </div>
-</div>
 </body>
 </html>
