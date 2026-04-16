@@ -146,8 +146,8 @@ data.forEach(item => {
             td.innerHTML = `
                 <div class="desc">
                     ${text}
-                    <button class="more-btn" onclick="openModal('${item.file}')">więcej...</button>                
-                    </div>
+                <button class="more-btn" onclick="openModal('${item.file}', '${item.title}')">więcej...</button>                    
+                </div>
             `;
         } else {
             td.textContent = text;
