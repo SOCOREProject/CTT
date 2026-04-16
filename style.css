@@ -166,3 +166,12 @@ footer {
 .modal-content button:hover {
     background: #004080;
 }
+#modalTitle {
+    color: #002e5a;
+    margin-bottom: 10px;
+}
+
+#modalFile {
+    color: #555;
+    font-size: 14px;
+}
