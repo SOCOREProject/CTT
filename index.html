@@ -159,6 +159,32 @@ function filterTable() {
         row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
     });
 }
+    function openModal() {
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function sendFile() {
+    const email = document.getElementById("email").value;
+
+    if (!email) {
+        alert("Podaj email!");
+        return;
+    }
+
+    alert("Plik został wysłany (symulacja)");
+
+    // 🔥 pobieranie pliku (fake)
+    const link = document.createElement("a");
+    link.href = "plik.pdf"; // dodaj swój plik
+    link.download = "plik.pdf";
+    link.click();
+
+    closeModal();
+}
 </script>
 <div id="modal" class="modal">
     <div class="modal-content">
