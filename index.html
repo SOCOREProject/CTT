@@ -1,55 +1,40 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Innovation on Demand</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <nav>
-<div class="logo">
-    <img src="logo.png" alt="Logo" class="logo-img">
-</div>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>INNOVATION ON DEMAND</h1>
-</section>
-
-<div class="container">
-    <div class="content">
-        <h2></h2>
-        <p>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<p class="intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
-<div class="table-header">
-    <h3>Spis zapytań ofertowych</h3>
-    <input type="text" id="searchInput" placeholder="Wyszukaj" onkeyup="filterTable()">
-</div>
-<table id="dataTable">
- <thead>
-    <tr>
-        <th>Data zapytania</th>
-        <th>Tytuł</th>
-        <th>Opis</th>
-        <th>Dyscyplina naukowa</th>
-        <th>Termin składania ofert</th>
-        <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+
+        <!-- HEADER TABELI -->
+        <div class="table-header">
+            <h3>Spis zapytań ofertowych</h3>
+            <input type="text" id="searchInput" placeholder="Wyszukaj..." onkeyup="filterTable()">
+        </div>
+
+        <!-- TABELA -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Data zapytania</th>
+                    <th>Tytuł</th>
+                    <th>Opis</th>
+                    <th>Dyscyplina naukowa</th>
+                    <th>Termin składania ofert</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </section>
+</main>
+
+<footer>
+    Wszelkie prawa zastrzeżone
+</footer>
 
 <script>
 const data = [
     {
         date: "2026-04-10",
-        title: "Zapytanie 7",
+        title: "Zapytanie 1",
         description: "Poszukiwane rozwiązanie technologiczne...",
         field: "Inżynieria materiałowa",
         deadline: "2026-05-01",
@@ -57,51 +42,11 @@ const data = [
     },
     {
         date: "2026-04-12",
-        title: "Zapytanie 6",
+        title: "Zapytanie 2",
         description: "Analiza materiałów kompozytowych...",
         field: "Chemia",
         deadline: "2026-05-10",
         status: "W trakcie"
-    },
-    {
-        date: "2026-04-13",
-        title: "Zapytanie 5",
-        description: "Lorem ipsum dolor sit amet...",
-        field: "Fizyka",
-        deadline: "2026-05-15",
-        status: "Otwarte"
-    },
-    {
-        date: "2026-04-13",
-        title: "Zapytanie 4",
-        description: "Lorem ipsum dolor sit amet...",
-        field: "Biologia",
-        deadline: "2026-05-15",
-        status: "Otwarte"
-    },
-    {
-        date: "2026-04-13",
-        title: "Zapytanie 3",
-        description: "Lorem ipsum dolor sit amet...",
-        field: "Biologia",
-        deadline: "2026-05-15",
-        status: "Otwarte"
-    },
-    {
-        date: "2026-04-13",
-        title: "Zapytanie 2",
-        description: "Lorem ipsum dolor sit amet...",
-        field: "Biologia",
-        deadline: "2026-05-15",
-        status: "Otwarte"
-    },
-    {
-        date: "2026-04-13",
-        title: "Zapytanie 1",
-        description: "Lorem ipsum dolor sit amet...",
-        field: "Biologia",
-        deadline: "2026-05-15",
-        status: "Otwarte"
     }
 ];
 
@@ -110,51 +55,31 @@ const tableBody = document.querySelector("#dataTable tbody");
 data.forEach(item => {
     const row = document.createElement("tr");
 
-    const cells = [
+    [
         item.date,
         item.title,
         item.description,
         item.field,
         item.deadline,
         item.status
-    ];
-
-    const labels = [
-        "Data zapytania",
-        "Tytuł",
-        "Opis",
-        "Dyscyplina",
-        "Termin",
-        "Status"
-    ];
-
-    cells.forEach((text, index) => {
+    ].forEach(text => {
         const td = document.createElement("td");
         td.textContent = text;
-        td.setAttribute("data-label", labels[index]);
         row.appendChild(td);
     });
 
     tableBody.appendChild(row);
 });
-</script>
-        <script>
-         function filterTable() {
-    const input = document.getElementById("searchInput");
-    const filter = input.value.toLowerCase();
+
+function filterTable() {
+    const filter = document.getElementById("searchInput").value.toLowerCase();
     const rows = document.querySelectorAll("#dataTable tbody tr");
 
     rows.forEach(row => {
-        const text = row.innerText.toLowerCase();
-        row.style.display = text.includes(filter) ? "" : "none";
+        row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
     });
-}   
-        </script>
-        </div> 
-</div> 
-<footer>
-Wszelkie prawa zastrzeżone
-</footer>
+}
+</script>
 
 </body>
 </html>
