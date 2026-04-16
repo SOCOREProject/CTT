@@ -111,23 +111,22 @@ footer {
     margin-top: 30px;
 }
 .desc {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .more-btn {
-    display: none;
-    margin-left: 10px;
-    padding: 5px 10px;
     background: #002e5a;
     color: white;
     border: none;
+    padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 12px;
 }
-.desc:hover .more-btn {
-    display: inline-block;
-}
+
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -141,8 +140,8 @@ footer {
 .modal-content {
     background: white;
     padding: 20px;
-    margin: 15% auto;
     width: 300px;
+    margin: 15% auto;
     border-radius: 10px;
     text-align: center;
 }
