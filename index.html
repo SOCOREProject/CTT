@@ -192,7 +192,9 @@ function closeModal() {
 </script>
     <div id="modal" class="modal">
     <div class="modal-content">
-        <h3>Podaj email</h3>
+        <h3 id="modalTitle">Tytuł zapytania</h3>
+
+        <p><strong>Plik:</strong> <span id="modalFile"></span></p>
 
         <input type="email" id="email" placeholder="Twój email">
 
@@ -201,6 +203,5 @@ function closeModal() {
         <button onclick="downloadFile()">Pobierz plik</button>
         <button onclick="closeModal()">Zamknij</button>
     </div>
-</div>
 </body>
 </html>
