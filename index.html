@@ -205,23 +205,6 @@ function closeModal() {
     .catch(error => {
         console.error("Błąd:", error);
     });
-
-    function filterTable() {
-    const input = document.getElementById("searchInput");
-    const filter = input.value.toLowerCase();
-
-    const rows = document.querySelectorAll("#dataTable tbody tr");
-
-    rows.forEach(row => {
-        const text = row.innerText.toLowerCase();
-
-        if (text.includes(filter)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
-        }
-    });
-}
 </script>
     <div id="modal" class="modal">
     <div class="modal-content">
