@@ -182,6 +182,31 @@ function closeModal() {
         return;
     }
 
+    // 🔥 zapis do pliku przez PHP
+    fetch("save_email.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "email=" + encodeURIComponent(email)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Zapisano:", data);
+
+        // 🔥 dopiero teraz pobieranie pliku
+        const link = document.createElement("a");
+        link.href = selectedFile;
+        link.download = selectedFile;
+        link.click();
+
+        closeModal();
+    })
+    .catch(error => {
+        console.error("Błąd:", error);
+    });
+}
+
     const link = document.createElement("a");
     link.href = selectedFile; // 🔥 TU JEST KLUCZ
     link.download = selectedFile;
