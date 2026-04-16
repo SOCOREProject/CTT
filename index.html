@@ -205,9 +205,8 @@ function closeModal() {
     .catch(error => {
         console.error("Błąd:", error);
     });
-</script>
-    <script>
-        function filterTable() {
+  }
+    function filterTable() {
     const input = document.getElementById("searchInput");
     const filter = input.value.toLowerCase();
 
@@ -215,11 +214,11 @@ function closeModal() {
 
     rows.forEach(row => {
         const text = row.innerText.toLowerCase();
-
         row.style.display = text.includes(filter) ? "" : "none";
     });
 }
-    </script>
+</script>
+   
     <div id="modal" class="modal">
     <div class="modal-content">
         <h3 id="modalTitle">Tytuł zapytania</h3>
