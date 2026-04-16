@@ -164,6 +164,22 @@ function openModal() {
 function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
+    function downloadFile() {
+    const email = document.getElementById("email").value;
+
+    if (!email) {
+        alert("Wpisz adres email!");
+        return;
+    }
+
+    // 🔥 pobieranie pliku
+    const link = document.createElement("a");
+    link.href = "plik1.pdf";
+    link.download = "plik1.pdf";
+    link.click();
+
+    closeModal();
+}
 </script>
     <div id="modal" class="modal">
     <div class="modal-content">
