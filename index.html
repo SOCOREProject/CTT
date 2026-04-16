@@ -158,6 +158,36 @@ function sendFile() {
 
     closeModal();
 }
+    data.forEach(item => {
+    const row = document.createElement("tr");
+
+    [
+        item.date,
+        item.title,
+        item.description,
+        item.field,
+        item.deadline,
+        item.status
+    ].forEach((text, index) => {
+
+        const td = document.createElement("td");
+
+        if (index === 2) {
+            td.innerHTML = `
+                <div class="desc">
+                    ${text}
+                    <button class="more-btn" onclick="openModal()">więcej...</button>
+                </div>
+            `;
+        } else {
+            td.textContent = text;
+        }
+
+        row.appendChild(td);
+    });
+
+    tableBody.appendChild(row);
+});
 </script>
 <div id="modal" class="modal">
     <div class="modal-content">
