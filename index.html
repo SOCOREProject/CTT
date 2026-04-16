@@ -206,14 +206,6 @@ function closeModal() {
         console.error("Błąd:", error);
     });
 }
-
-    const link = document.createElement("a");
-    link.href = selectedFile; // 🔥 TU JEST KLUCZ
-    link.download = selectedFile;
-    link.click();
-
-    closeModal();
-}
 </script>
     <div id="modal" class="modal">
     <div class="modal-content">
