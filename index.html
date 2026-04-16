@@ -134,7 +134,26 @@ data.forEach(item => {
         item.field,
         item.deadline,
         item.status
-    ].forEach(text => {
+    ].forEach((text, index) => {
+
+        const td = document.createElement("td");
+
+        if (index === 2) { // kolumna "Opis"
+            td.innerHTML = `
+                <div class="desc">
+                    ${text}
+                    <button class="more-btn" onclick="openModal()">więcej...</button>
+                </div>
+            `;
+        } else {
+            td.textContent = text;
+        }
+
+        row.appendChild(td); // 🔥 brakowało tego
+    });
+
+    tableBody.appendChild(row); // 🔥 było w złym miejscu
+});
        const td = document.createElement("td");
 
 if (index === 2) { // kolumna "Opis"
