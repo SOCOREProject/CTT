@@ -174,38 +174,7 @@ function openModal(file, title) {
 function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
-  function downloadFile() {
-    const email = document.getElementById("email").value;
-
-    if (!email) {
-        alert("Wpisz adres email!");
-        return;
-    }
-
-    // 🔥 zapis do pliku przez PHP
-    fetch("save_email.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "email=" + encodeURIComponent(email)
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log("Zapisano:", data);
-
-        // 🔥 dopiero teraz pobieranie pliku
-        const link = document.createElement("a");
-        link.href = selectedFile;
-        link.download = selectedFile;
-        link.click();
-
-        closeModal();
-    })
-    .catch(error => {
-        console.error("Błąd:", error);
-    });
-  }
+ 
     function filterTable() {
     const input = document.getElementById("searchInput");
     const filter = input.value.toLowerCase();
@@ -215,6 +184,44 @@ function closeModal() {
     rows.forEach(row => {
         const text = row.innerText.toLowerCase();
         row.style.display = text.includes(filter) ? "" : "none";
+    });
+}
+    function downloadFile() {
+    const email = document.getElementById("email").value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        alert("Podaj poprawny email!");
+        return;
+    }
+
+    fetch("https://formspree.io/f/xojygrlq", { // ← TU WKLEJ SWÓJ LINK
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: email,
+            zapytanie: selectedTitle,
+            plik: selectedFile
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            const link = document.createElement("a");
+            link.href = selectedFile;
+            link.download = selectedFile;
+            link.click();
+
+            closeModal();
+        } else {
+            alert("Błąd zapisu emaila");
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Błąd połączenia");
     });
 }
 </script>
