@@ -67,6 +67,8 @@ header {
     border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
+    position: relative;
+    top: -5px;
 }
 
 #searchInput:focus {
